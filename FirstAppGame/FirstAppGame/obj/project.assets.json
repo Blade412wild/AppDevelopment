@@ -24469,11 +24469,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nathan\\Documents\\03_EigenWerk\\2023-2024\\App Development\\FirstAppGame\\FirstAppGame\\FirstAppGame.csproj",
+      "projectUniqueName": "C:\\Users\\Nathan\\Documents\\GitHub\\AppDevelopment\\FirstAppGame\\FirstAppGame\\FirstAppGame.csproj",
       "projectName": "FirstAppGame",
-      "projectPath": "C:\\Users\\Nathan\\Documents\\03_EigenWerk\\2023-2024\\App Development\\FirstAppGame\\FirstAppGame\\FirstAppGame.csproj",
+      "projectPath": "C:\\Users\\Nathan\\Documents\\GitHub\\AppDevelopment\\FirstAppGame\\FirstAppGame\\FirstAppGame.csproj",
       "packagesPath": "C:\\Users\\Nathan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nathan\\Documents\\03_EigenWerk\\2023-2024\\App Development\\FirstAppGame\\FirstAppGame\\obj\\",
+      "outputPath": "C:\\Users\\Nathan\\Documents\\GitHub\\AppDevelopment\\FirstAppGame\\FirstAppGame\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

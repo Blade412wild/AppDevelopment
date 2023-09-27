@@ -18,6 +18,9 @@
     <MauiXaml Update="BedRoom.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="ChillRoom.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Corridor.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

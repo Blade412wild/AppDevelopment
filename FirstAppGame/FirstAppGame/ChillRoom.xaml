@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirstAppGame.ChillRoom"
+             Title="ChillRoom">
+    <VerticalStackLayout>
+        <Label 
+            Text="ChillRoom"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Button
+                Text="Next"
+                HorizontalOptions="Center" 
+                Clicked="OnNextRoomClicked" />
+
+        <Button
+                Text="Previous"
+                HorizontalOptions="Center" 
+                Clicked="OnPreviousRoomClicked" />
+    </VerticalStackLayout>
+</ContentPage>

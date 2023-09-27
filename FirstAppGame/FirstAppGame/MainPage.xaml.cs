@@ -20,6 +20,8 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
 
 	};
 
+	private int roomCounter;
+
 
 
 	public MainPage()
@@ -72,6 +74,31 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
 	{
         Navigation.PushAsync(new StatsShower());
 
+    }
+
+	private void OnNextRoomClicked(object sender, EventArgs e)
+	{
+        //roomCounter++;
+        //      RoomDecider(roomCounter);
+        Navigation.PushAsync(new Corridor());
+    }
+    private void OnPreviousRoomClicked(object sender, EventArgs e)
+    {
+        roomCounter++;
+        RoomDecider(roomCounter);
+    }
+
+
+    private void RoomDecider(int _room)
+	{
+        switch (_room)
+        {
+            case 0: Navigation.PushAsync(new StatsShower()); break;
+            case 1: Navigation.PushAsync(new StatsShower()); break;
+            case 2: Navigation.PushAsync(new StatsShower()); break;
+            case 3: Navigation.PushAsync(new StatsShower()); break;
+
+        }
     }
 }
 

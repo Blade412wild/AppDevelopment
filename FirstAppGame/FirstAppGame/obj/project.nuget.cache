@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lumPquoTNAASWW2XSVdaVh0RWdHhpoEq15CIEat628cRsZmxGjGqgGtnlD19ysUZgROMQyLl8aH1JRolY4xjYg==",
+  "dgSpecHash": "cuNWLItyx7Y9j3I3tVShA5bfyt/MTUW4V7zFGa6kbOGRwhdqMTABnVztWNgoC+wrijhGrUHFvD9a33nMcaJR3Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nathan\\Documents\\03_EigenWerk\\2023-2024\\App Development\\FirstAppGame\\FirstAppGame\\FirstAppGame.csproj",
+  "projectFilePath": "C:\\Users\\Nathan\\Documents\\GitHub\\AppDevelopment\\FirstAppGame\\FirstAppGame\\FirstAppGame.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nathan\\.nuget\\packages\\googlegson\\2.9.1.1\\googlegson.2.9.1.1.nupkg.sha512",
     "C:\\Users\\Nathan\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",

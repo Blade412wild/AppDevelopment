@@ -57,6 +57,9 @@
 	  <MauiXaml Update="BedRoom.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="ChillRoom.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Corridor.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

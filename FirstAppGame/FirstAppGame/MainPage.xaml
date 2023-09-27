@@ -10,7 +10,7 @@
             VerticalOptions="Center">
 
             <Image
-                Source="dotnet_bot.png"
+                Source="bedroom.png"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 HeightRequest="200"
                 HorizontalOptions="Center" />
@@ -52,6 +52,16 @@
                 Text="StatsShower"
                 HorizontalOptions="Center" 
                 Clicked="StatsPageClicked" />
+            
+            <Button
+                Text="Next"
+                HorizontalOptions="Center" 
+                Clicked="OnNextRoomClicked" />
+            
+            <Button
+                Text="Previous"
+                HorizontalOptions="Center" 
+                Clicked="OnPreviousRoomClicked" />
 
 
 

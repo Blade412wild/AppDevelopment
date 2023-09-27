@@ -4,9 +4,23 @@
              x:Class="FirstAppGame.BedRoom"
              Title="BedRoom">
     <VerticalStackLayout>
+
+        <Image
+                Source="bedroom.png"
+                HeightRequest="600"
+                HorizontalOptions="Center" />
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Bedroom"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Button
+                Text="Next"
+                HorizontalOptions="Center" 
+                Clicked="OnNextRoomClicked" />
+
+        <Button
+                Text="Previous"
+                HorizontalOptions="Center" 
+                Clicked="OnPreviousRoomClicked" />
     </VerticalStackLayout>
 </ContentPage>

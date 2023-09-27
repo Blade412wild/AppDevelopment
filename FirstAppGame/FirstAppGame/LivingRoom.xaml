@@ -5,8 +5,17 @@
              Title="LivingRoom">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="LivingRoom"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Button
+                Text="Next"
+                HorizontalOptions="Center" 
+                Clicked="OnNextRoomClicked" />
+
+        <Button
+                Text="Previous"
+                HorizontalOptions="Center" 
+                Clicked="OnPreviousRoomClicked" />
     </VerticalStackLayout>
 </ContentPage>
