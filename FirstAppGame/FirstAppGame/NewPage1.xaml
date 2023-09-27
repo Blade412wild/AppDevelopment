@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirstAppGame.NewPage1"
+             Title="NewPage1">
+
+    <VerticalStackLayout Spacing="6">
+        <Image
+                Source="fullhouse.png"
+                HeightRequest="200"
+                HorizontalOptions="Center" 
+           
+            />
+        
+        <HorizontalStackLayout Margin="20"
+                           Spacing="6">
+            <VerticalStackLayout Spacing="0">
+                <Rectangle Fill="Red"
+                       WidthRequest="40"
+                       HeightRequest="40" />
+                <Label Text="100%" FontSize="16" />
+                
+                
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="0">
+                <Rectangle Fill="Purple"
+                       WidthRequest="40"
+                       HeightRequest="40" />
+                <Label Text="100%" FontSize="16" />
+
+            </VerticalStackLayout>
+            <VerticalStackLayout Spacing="0">
+                <Rectangle Fill="Red"
+                       WidthRequest="40"
+                       HeightRequest="40" />
+                <Label Text="100%" FontSize="16" />
+
+
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="0">
+                <Rectangle Fill="Purple"
+                       WidthRequest="40"
+                       HeightRequest="40" />
+                <Label Text="100%" FontSize="16" />
+
+            </VerticalStackLayout>
+            <VerticalStackLayout Spacing="0">
+                <Rectangle Fill="Red"
+                       WidthRequest="40"
+                       HeightRequest="40" />
+                <Label Text="100%" FontSize="16" />
+
+
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="0">
+                <Rectangle Fill="Purple"
+                       WidthRequest="40"
+                       HeightRequest="40" />
+                <Label Text="100%" FontSize="16" />
+
+            </VerticalStackLayout>
+            
+
+
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
