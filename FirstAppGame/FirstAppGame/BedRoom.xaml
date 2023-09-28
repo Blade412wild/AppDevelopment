@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FirstAppGame.BedRoom"
              Title="BedRoom">
-    <VerticalStackLayout>
+    <VerticalStackLayout Spacing="10">
 
         <Image
                 Source="bedroom.png"
@@ -13,14 +13,55 @@
             Text="Bedroom"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <Button
+        <VerticalStackLayout>
+
+            <HorizontalStackLayout Spacing="10"
+                                   HorizontalOptions="Center" >
+                <Label 
+                    Text="Hunger: 100%"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+                <Label 
+                    Text="Thirst: 100%"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+                <Label 
+                    Text="Sleep: 100%"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="10"
+                                   HorizontalOptions="Center" >
+                <Label 
+                    Text="Overstimulated: 100%"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+                <Label 
+                    Text="Bored: 100%"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+                <Label 
+                    Text="Lonely: 100%"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+        <HorizontalStackLayout Spacing="10"
+                               HorizontalOptions="Center">
+            <Button
+                Text="Previous"
+                HorizontalOptions="Center" 
+                Clicked="OnPreviousRoomClicked" />
+
+            <Button
                 Text="Next"
                 HorizontalOptions="Center" 
                 Clicked="OnNextRoomClicked" />
 
-        <Button
-                Text="Previous"
-                HorizontalOptions="Center" 
-                Clicked="OnPreviousRoomClicked" />
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
