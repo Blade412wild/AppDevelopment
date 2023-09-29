@@ -4,7 +4,6 @@ namespace FirstAppGame;
 
 public partial class StatsShower : ContentPage, INotifyPropertyChanged
 {
-    public event PropertyChangedEventHandler PropertyChanged;
 
     public string MySecondText = "Nathan";
 

@@ -9,7 +9,7 @@
                 HeightRequest="600"
                 HorizontalOptions="Center" />
         <Label 
-            Text="Corridor"
+            Text="{Binding NameTest, Mode= OneWay}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <VerticalStackLayout>
