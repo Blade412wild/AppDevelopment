@@ -2,7 +2,9 @@ namespace FirstAppGame;
 
 public partial class BedRoom : ContentPage
 {
-	public BedRoom()
+    public delegate void ButtonPressed();
+    public static event ButtonPressed OnSleepEvent;
+    public BedRoom()
 	{
 		InitializeComponent();
 	}

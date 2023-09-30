@@ -12,8 +12,8 @@ namespace FirstAppGame
         public event PropertyChangedEventHandler PropertyChanged;
         public string Name { get; set; }
         public float Hunger { get; set; }
-        public float Sleepy { get; set; }
         public float Thirst { get; set; }
+        public float Sleepy { get; set; }
         public float Bored { get; set; }
         public float Lonely { get; set; }
         public float OverStimulated { get; set; }

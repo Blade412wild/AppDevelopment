@@ -2,7 +2,9 @@ namespace FirstAppGame;
 
 public partial class LivingRoom : ContentPage
 {
-	public LivingRoom()
+    public delegate void ButtonPressed();
+    public static event ButtonPressed OnEatEvent;
+    public LivingRoom()
 	{
 		InitializeComponent();
 	}

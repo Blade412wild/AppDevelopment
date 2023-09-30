@@ -13,6 +13,8 @@ namespace FirstAppGame
         bool UpdateItem(T item);
         bool DeleteItem(T item);
 
+        //string Test();
+
 
     }
 }

@@ -26,7 +26,7 @@
                 FontSize="32"
                 HorizontalOptions="Center"
                 />
-            
+
 
 
             <Label
@@ -34,13 +34,6 @@
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                 FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Touch me daddy"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 
             <Button

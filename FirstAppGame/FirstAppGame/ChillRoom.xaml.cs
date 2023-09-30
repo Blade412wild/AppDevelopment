@@ -2,7 +2,9 @@ namespace FirstAppGame;
 
 public partial class ChillRoom : ContentPage
 {
-	public ChillRoom()
+    public delegate void ButtonPressed();
+    public static event ButtonPressed OnGamingEvent;
+    public ChillRoom()
 	{
 		InitializeComponent();
 	}
