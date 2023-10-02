@@ -25,6 +25,7 @@ namespace FirstAppGame
         };
         public ActionStateManager()
         {
+            CurrentState = PlayerAction.Nothing;
             statsCalculators = new StatsCalculators();
 
             //Events Listenactions
@@ -54,6 +55,14 @@ namespace FirstAppGame
                 case PlayerAction.Eating: Eating(); break;
 
             }
+
+            string _creatureStatsString = JsonConvert.SerializeObject(tijdelijkeCreature);
+            Console.WriteLine(_creatureStatsString);
+        }
+
+        public PlayerAction CurrentPlayerAction()
+        {
+            return CurrentState;
         }
 
         private void Nothing()
@@ -102,8 +111,7 @@ namespace FirstAppGame
             tijdelijkeCreature.Money = statsCalculators.DecreaseMoney(CurrentState, tijdelijkeCreature.Money);
             tijdelijkeCreature.Bored = statsCalculators.DecreaseBoredNess(tijdelijkeCreature.Bored);
             tijdelijkeCreature.OverStimulated = statsCalculators.DecreaseOverstimulation(CurrentState, tijdelijkeCreature.OverStimulated);
-            string _creatureStatsString = JsonConvert.SerializeObject(tijdelijkeCreature);
-            Console.WriteLine(_creatureStatsString);
+
 
         }
         private void Eating()

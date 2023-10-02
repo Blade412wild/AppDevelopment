@@ -14,21 +14,23 @@ namespace FirstAppGame
     {
 
         //Timer
-        private  ActionStateManager actionManager = new ActionStateManager();
-        private  StatsManager statsManager = new StatsManager();
+        //private  ActionStateManager actionManager = new ActionStateManager();
+        //private  RoomManager roomManager = new RoomManager();
 
         private PlayerAction currentState;
 
         public void GameFlow()
         {
-            currentState = CheckActionState();
+            //actionManager.UpdateStats();
+            //currentState = CheckActionState();
+            
         }
 
-        private PlayerAction CheckActionState()
-        {
-            PlayerAction _currentState;
-            _currentState = actionManager.CurrentState;
-            return _currentState;
-        }
+        //private PlayerAction CheckActionState()
+        //{
+        //    PlayerAction _currentState;
+        //    _currentState = actionManager.CurrentState;
+        //    return _currentState;
+        //}
     }
 }

@@ -87,13 +87,11 @@ namespace FirstAppGame
 
             return _newAmount;
         }
-
         public float IncreaseMoney(float _currentStatAmount)
         {
             float loanPerSeconds = 12.50f / 60.0f / 60.0f;// uurloon = 12,50 
             return loanPerSeconds;
         }
-
         public float DecreaseMoney(PlayerAction _playerAction, float _currentStatAmount)
         {
             float _eatingCost = 0;
@@ -114,7 +112,6 @@ namespace FirstAppGame
 
             return _newAmount;
         }
-
         public float IncreaseOverstimulation(float _currentStatAmount)
         {
             float _baseAmount;
@@ -166,7 +163,6 @@ namespace FirstAppGame
 
             return _newAmount;
         }
-
         public float IncreaseBoredNess(float _currentStatAmount)
         {
             float _baseAmount;
@@ -224,7 +220,6 @@ namespace FirstAppGame
 
             return _newAmount;
         }
-
         public float DecreaseLonely(float _currentStatAmount)
         {
             float _baseAmount;

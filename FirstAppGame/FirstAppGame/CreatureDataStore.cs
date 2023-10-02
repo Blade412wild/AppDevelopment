@@ -50,11 +50,5 @@ namespace FirstAppGame
         {
             throw new NotImplementedException();
         }
-
-        //public string Test()
-        //{
-        //    return "TestTest";
-
-        //}
     }
 }

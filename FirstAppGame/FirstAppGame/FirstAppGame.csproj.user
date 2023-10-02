@@ -18,19 +18,34 @@
     <MauiXaml Update="BedRoom.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="BedRoomP.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="ChillRoom.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="ChillRoomP.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Corridor.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="CorridorP.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="LivingRoom.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="LivingRoomP.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="NewPage1.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="StatsShower.xaml">
+    <MauiXaml Update="RoomManager2.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="StartMenu.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>
