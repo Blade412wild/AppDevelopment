@@ -53,6 +53,7 @@ public partial class Corridor : ContentPage, INotifyPropertyChanged
     }
     private void OnImageButtonClicked(object sender, EventArgs e)
     {
+        OnWorkEvent?.Invoke();
         Navigation.PushAsync(new CorridorP());
     }
 }

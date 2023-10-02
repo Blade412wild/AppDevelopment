@@ -43,6 +43,7 @@ public partial class LivingRoom : ContentPage
     }
     private void OnImageButtonClicked(object sender, EventArgs e)
     {
+        OnEatEvent?.Invoke();
         Navigation.PushAsync(new LivingRoomP());
     }
 }

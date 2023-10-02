@@ -1,7 +1,10 @@
+using System.ComponentModel;
+
 namespace FirstAppGame;
 
-public partial class ChillRoom : ContentPage
+public partial class ChillRoom : ContentPage, INotifyPropertyChanged
 {
+    public event PropertyChangedEventHandler PropertyChanged;
     public delegate void PlayerActionButton();
     public static event PlayerActionButton OnGamingEvent;
 
@@ -9,10 +12,16 @@ public partial class ChillRoom : ContentPage
     public static event RoomSwitchButton RoomButtonIsPressed;
 
     private ActionStateManager actionStateManager = DependencyService.Get<ActionStateManager>();
+    private IDataStore<Creature> creatureDataStore = DependencyService.Get<IDataStore<Creature>>();
+
+    public Creature LocalCreature { get; set; }
+
 
     public ChillRoom()
     {
         InitializeComponent();
+        LocalCreature = creatureDataStore.ReadItem();
+        Console.WriteLine(LocalCreature.Name);
     }
 
 
@@ -41,6 +50,7 @@ public partial class ChillRoom : ContentPage
     }
     private void OnImageButtonClicked(object sender, EventArgs e)
     {
+        OnGamingEvent?.Invoke();
         Navigation.PushAsync(new ChillRoomP());
     }
 }

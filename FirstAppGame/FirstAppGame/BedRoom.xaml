@@ -53,12 +53,12 @@
         <HorizontalStackLayout Spacing="10"
                                HorizontalOptions="Center">
             <Button
-                Text="Previous"
+                Text="ChillRoom"
                 HorizontalOptions="Center" 
                 Clicked="OnPreviousRoomClicked" />
 
             <Button
-                Text="Next"
+                Text="Corridor"
                 HorizontalOptions="Center" 
                 Clicked="OnNextRoomClicked" />
 

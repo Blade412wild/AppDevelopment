@@ -47,7 +47,7 @@
                 Clicked="StatsPageClicked" />
             
             <Button
-                Text="Next"
+                Text="StartMenu"
                 HorizontalOptions="Center" 
                 Clicked="OnNextRoomClicked" />
             

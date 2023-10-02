@@ -1,9 +1,16 @@
 ﻿obj\Debug\net7.0-android\resizetizer\r\drawable\bedroom.png
+obj\Debug\net7.0-android\resizetizer\r\drawable\bedroomp.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\chillroom.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\chillroom2.png
+obj\Debug\net7.0-android\resizetizer\r\drawable\chillroomp.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\chillroomportret.png
+obj\Debug\net7.0-android\resizetizer\r\drawable\corridor.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\corridorblanc.png
+obj\Debug\net7.0-android\resizetizer\r\drawable\corridorp.png
+obj\Debug\net7.0-android\resizetizer\r\drawable\corridorstartmenu.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\fullhouse.png
+obj\Debug\net7.0-android\resizetizer\r\drawable\livingroom.png
+obj\Debug\net7.0-android\resizetizer\r\drawable\livingroomp.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\livingroomportet.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\livinroomtest.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\livinroomtest2.png

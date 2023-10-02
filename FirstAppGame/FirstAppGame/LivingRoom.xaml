@@ -5,7 +5,7 @@
              Title="LivingRoom">
     <VerticalStackLayout Spacing="10">
         
-        <ImageButton Source="livingroomportet.png"
+        <ImageButton Source="livingroom.png"
                     Clicked="OnImageButtonClicked"
                     HeightRequest="600"
                     VerticalOptions="Center" />
@@ -54,12 +54,12 @@
         <HorizontalStackLayout Spacing="10"
                                HorizontalOptions="Center">
             <Button
-                Text="Previous"
+                Text="Corridor"
                 HorizontalOptions="Center" 
                 Clicked="OnPreviousRoomClicked" />
 
             <Button
-                Text="Next"
+                Text="ChillRoom"
                 HorizontalOptions="Center" 
                 Clicked="OnNextRoomClicked" />
 

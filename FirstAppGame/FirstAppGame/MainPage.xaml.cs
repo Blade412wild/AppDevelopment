@@ -12,22 +12,21 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
 
     public delegate void RoomSwitchButton(int _room);
     public static event RoomSwitchButton RoomButtonIsPressed;
-    public Creature MyCreature { get; set; }/* = new Creature*/
-    //{
-    //	Name = " Simon",
-    //	Hunger = 100.0f,
-    //	Thirst = 100.0f,
-    //	Bored = 100.0f,
-    //	Lonely = 100.0f,
-    //	OverStimulated = 100.0f,
-    //	Sleepy = 100.0f,
-    //	Money = 0.0f
+    public Creature MyCreature { get; set; } = new Creature
+    {
+    	Name = " Simon",
+    	Hunger = 100.0f,
+    	Thirst = 100.0f,
+    	Bored = 100.0f,
+    	Lonely = 100.0f,
+    	OverStimulated = 100.0f,
+    	Sleepy = 100.0f,
+    	Money = 0.0f
 
-    //};
+    };
 
-    //private ActionStateManager actionManager = new ActionStateManager();
-    private RoomManager2 roomManager;
-    private ActionStateManager actionStateManager = DependencyService.Get<ActionStateManager>();
+//private ActionStateManager actionManager = new ActionStateManager();
+private ActionStateManager actionStateManager = DependencyService.Get<ActionStateManager>();
 
 
     public MainPage()
@@ -40,7 +39,7 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
         //MyCreature = dataStore.ReadItem();\
         var _creatureDataStore = DependencyService.Get<IDataStore<Creature>>();
         var Timer = new Timer();
-        roomManager = new RoomManager2(actionStateManager);
+        //roomManager = new RoomManager2(actionStateManager);
 
 
         MyCreature = _creatureDataStore.ReadItem();
@@ -48,30 +47,30 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
 
 
 
-        if (MyCreature == null)
-        {
-            new Creature
-            {
-                Name = " Ezra",
-                Hunger = 100.0f,
-                Thirst = 100.0f,
-                Bored = 100.0f,
-                Lonely = 100.0f,
-                OverStimulated = 100.0f,
-                Sleepy = 100.0f,
-                Money = 0.0f
-            };
-            //dataStore.CreateItem(MyCreature);
-            _creatureDataStore.CreateItem(MyCreature);
-            MyCreature = _creatureDataStore.ReadItem();
-            Console.WriteLine("MyCreature was null");
+        //if (MyCreature == null)
+        //{
+        //    new Creature
+        //    {
+        //        Name = " Ezra",
+        //        Hunger = 100.0f,
+        //        Thirst = 100.0f,
+        //        Bored = 100.0f,
+        //        Lonely = 100.0f,
+        //        OverStimulated = 100.0f,
+        //        Sleepy = 100.0f,
+        //        Money = 0.0f
+        //    };
+        //    //dataStore.CreateItem(MyCreature);
+        //    _creatureDataStore.CreateItem(MyCreature);
+        //    MyCreature = _creatureDataStore.ReadItem();
+        //    Console.WriteLine("MyCreature was null");
 
-        }
-        else
-        {
-            Console.WriteLine("MyCreature was niet null");
-            _creatureDataStore.UpdateItem(MyCreature);
-        }
+        //}
+        //else
+        //{
+        //    Console.WriteLine("MyCreature was niet null");
+        //    _creatureDataStore.UpdateItem(MyCreature);
+        //}
 
 
 
@@ -97,29 +96,14 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
         else
         {
             Console.WriteLine("Changed To Corridor");
-            Navigation.PushAsync(new Corridor());
+            Navigation.PushAsync(new StartMenu());
         }
     }
     private void OnPreviousRoomClicked(object sender, EventArgs e)
     {
         RoomButtonIsPressed?.Invoke(3);
     }
-    //private void RoomDecider(int _room)
-    //{
-    //    switch (_room)
-    //    {
-    //        //case 0: Navigation.PushAsync(new StartMenu()); break;
-    //        case 0: ChangeToCorridor(); break;
 
-    //    }
-    //}
-
-    //private void ChangeToCorridor()
-    //{
-
-    //    Navigation.PushAsync(new Corridor());
-
-    //}
 
 }
 

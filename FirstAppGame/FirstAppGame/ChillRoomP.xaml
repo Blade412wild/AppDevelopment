@@ -5,11 +5,11 @@
              Title="ChillRoomP">
     <VerticalStackLayout Spacing="10">
         <Image
-                Source="chillRoom2.png"
+                Source="chillRoomp.png"
                 HeightRequest="600"
                 HorizontalOptions="Center" />
         <Label 
-            Text="ChillRoomP"
+            Text="ChillRoom"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <VerticalStackLayout>
@@ -54,12 +54,12 @@
         <HorizontalStackLayout Spacing="10"
                                HorizontalOptions="Center">
             <Button
-                Text="Previous"
+                Text="Livingroom"
                 HorizontalOptions="Center" 
                 Clicked="OnPreviousRoomClicked" />
 
             <Button
-                Text="Next"
+                Text="Bedroom"
                 HorizontalOptions="Center" 
                 Clicked="OnNextRoomClicked" />
 

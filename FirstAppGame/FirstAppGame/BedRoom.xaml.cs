@@ -43,6 +43,8 @@ public partial class BedRoom : ContentPage
     }
     private void OnImageButtonClicked(object sender, EventArgs e)
     {
+        OnSleepEvent?.Invoke();
         Navigation.PushAsync(new BedRoomP());
+
     }
 }

@@ -4,7 +4,7 @@
              x:Class="FirstAppGame.ChillRoom"
              Title="ChillRoom">
     <VerticalStackLayout Spacing="10">
-        <ImageButton Source="chillRoom2.png"
+        <ImageButton Source="chillRoom.png"
                     Clicked="OnImageButtonClicked"
                     HeightRequest="600"
                     VerticalOptions="Center" />
@@ -21,7 +21,7 @@
             <HorizontalStackLayout Spacing="10"
                                    HorizontalOptions="Center" >
                 <Label 
-                    Text="Hunger: 100%"
+                    Text="{Binding LocalCreature.Name , Mode= OneWay}"
                     VerticalOptions="Center" 
                     HorizontalOptions="Center" />
                 <Label 
@@ -56,12 +56,12 @@
         <HorizontalStackLayout Spacing="10"
                                HorizontalOptions="Center">
             <Button
-                Text="Previous"
+                Text="Livingroom"
                 HorizontalOptions="Center" 
                 Clicked="OnPreviousRoomClicked" />
 
             <Button
-                Text="Next"
+                Text="Bedroom"
                 HorizontalOptions="Center" 
                 Clicked="OnNextRoomClicked" />
 

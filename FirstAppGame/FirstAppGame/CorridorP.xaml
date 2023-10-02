@@ -6,11 +6,11 @@
     <VerticalStackLayout Spacing="10">
 
         <Image
-                Source="corridorblanc.png"
+                Source="corridorp.png"
                 HeightRequest="600"
                 HorizontalOptions="Center" />
         <Label 
-            Text="corridorP"
+            Text="Corridor"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <VerticalStackLayout>
@@ -53,12 +53,12 @@
         <HorizontalStackLayout Spacing="10"
                                HorizontalOptions="Center">
             <Button
-                Text="Previous"
+                Text="Bedroom"
                 HorizontalOptions="Center" 
                 Clicked="OnPreviousRoomClicked" />
 
             <Button
-                Text="Next"
+                Text="LivingRoom"
                 HorizontalOptions="Center" 
                 Clicked="OnNextRoomClicked" />
 

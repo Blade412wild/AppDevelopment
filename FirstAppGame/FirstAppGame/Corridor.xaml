@@ -4,13 +4,13 @@
              x:Class="FirstAppGame.Corridor"
              Title="Corridor">
     <VerticalStackLayout Spacing="10">
-        <ImageButton Source="corridorblanc.png"
+        <ImageButton Source="corridor.png"
                     Clicked="OnImageButtonClicked"
                     HeightRequest="600"
                     VerticalOptions="Center" />
-        
+
         <Label 
-            Text="{Binding NameTest, Mode= OneWay}"
+            Text="Corridor"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <VerticalStackLayout>
@@ -55,12 +55,12 @@
         <HorizontalStackLayout Spacing="10"
                                HorizontalOptions="Center">
             <Button
-                Text="Previous"
+                Text="Bedroom"
                 HorizontalOptions="Center" 
                 Clicked="OnPreviousRoomClicked" />
 
             <Button
-                Text="Next"
+                Text="LivingRoom"
                 HorizontalOptions="Center" 
                 Clicked="OnNextRoomClicked" />
 
