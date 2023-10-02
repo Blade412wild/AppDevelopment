@@ -5,10 +5,10 @@
              Title="BedRoom">
     <VerticalStackLayout Spacing="10">
 
-        <Image
-                Source="bedroom.png"
-                HeightRequest="600"
-                HorizontalOptions="Center" />
+        <ImageButton Source="bedroom.png"
+                    Clicked="OnImageButtonClicked"
+                    HeightRequest="600"
+                    VerticalOptions="Center" />
         <Label 
             Text="Bedroom"
             VerticalOptions="Center" 

@@ -8,6 +8,9 @@ public partial class BedRoomP : ContentPage
 
     public delegate void RoomSwitchButton(int _room);
     public static event RoomSwitchButton RoomButtonIsPressed;
+
+    private ActionStateManager actionStateManager = DependencyService.Get<ActionStateManager>();
+
     public BedRoomP()
     {
         InitializeComponent();
@@ -15,10 +18,26 @@ public partial class BedRoomP : ContentPage
 
     private void OnNextRoomClicked(object sender, EventArgs e)
     {
-        RoomButtonIsPressed?.Invoke(2);
+        if (actionStateManager.CurrentState == ActionStateManager.PlayerAction.Working)
+        {
+            Console.WriteLine("Changed To CorridorP");
+            Navigation.PushAsync(new CorridorP());
+        }
+        else
+        {
+            Console.WriteLine("Changed To Corridor");
+            Navigation.PushAsync(new Corridor());
+        }
     }
     private void OnPreviousRoomClicked(object sender, EventArgs e)
     {
-        RoomButtonIsPressed?.Invoke(0);
+        if (actionStateManager.CurrentState == ActionStateManager.PlayerAction.Gaming)
+        {
+            Navigation.PushAsync(new ChillRoomP());
+        }
+        else
+        {
+            Navigation.PushAsync(new ChillRoom());
+        }
     }
 }

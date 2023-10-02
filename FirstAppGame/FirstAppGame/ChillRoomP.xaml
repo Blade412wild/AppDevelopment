@@ -4,7 +4,6 @@
              x:Class="FirstAppGame.ChillRoomP"
              Title="ChillRoomP">
     <VerticalStackLayout Spacing="10">
-
         <Image
                 Source="chillRoom2.png"
                 HeightRequest="600"
@@ -50,6 +49,8 @@
             </HorizontalStackLayout>
 
         </VerticalStackLayout>
+
+
         <HorizontalStackLayout Spacing="10"
                                HorizontalOptions="Center">
             <Button
@@ -63,5 +64,7 @@
                 Clicked="OnNextRoomClicked" />
 
         </HorizontalStackLayout>
+
+
     </VerticalStackLayout>
 </ContentPage>

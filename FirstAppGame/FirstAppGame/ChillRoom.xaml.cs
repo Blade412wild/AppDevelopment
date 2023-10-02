@@ -7,18 +7,40 @@ public partial class ChillRoom : ContentPage
 
     public delegate void RoomSwitchButton(int _room);
     public static event RoomSwitchButton RoomButtonIsPressed;
+
+    private ActionStateManager actionStateManager = DependencyService.Get<ActionStateManager>();
+
     public ChillRoom()
-	{
-		InitializeComponent();
-	}
+    {
+        InitializeComponent();
+    }
 
 
     private void OnNextRoomClicked(object sender, EventArgs e)
     {
-        RoomButtonIsPressed?.Invoke(1);
+        if (actionStateManager.CurrentState == ActionStateManager.PlayerAction.Sleeping)
+        {
+            Navigation.PushAsync(new BedRoomP());
+        }
+        else
+        {
+            Navigation.PushAsync(new BedRoom());
+        }
     }
     private void OnPreviousRoomClicked(object sender, EventArgs e)
     {
-        RoomButtonIsPressed?.Invoke(3);
+        if (actionStateManager.CurrentState == ActionStateManager.PlayerAction.Eating)
+        {
+            Navigation.PushAsync(new LivingRoomP());
+        }
+        else
+        {
+            Navigation.PushAsync(new LivingRoom());
+        }
+
+    }
+    private void OnImageButtonClicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new ChillRoomP());
     }
 }

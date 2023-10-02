@@ -4,11 +4,14 @@
              x:Class="FirstAppGame.ChillRoom"
              Title="ChillRoom">
     <VerticalStackLayout Spacing="10">
-        <Image
-                Source="chillroom2.png"
+        <ImageButton Source="chillRoom2.png"
+                    Clicked="OnImageButtonClicked"
+                    HeightRequest="600"
+                    VerticalOptions="Center" />
+        <!--<Image
+                Source="chillRoom2.png"
                 HeightRequest="600"
-                WidthRequest="400"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center" />-->
         <Label 
             Text="ChillRoom"
             VerticalOptions="Center" 

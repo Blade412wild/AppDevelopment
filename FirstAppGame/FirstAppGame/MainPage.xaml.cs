@@ -1,6 +1,4 @@
 ﻿using System.ComponentModel;
-using static Android.Provider.DocumentsContract;
-using static FirstAppGame.ActionStateManager;
 
 namespace FirstAppGame;
 
@@ -27,8 +25,9 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
 
     //};
 
-    private ActionStateManager actionManager = new ActionStateManager();
+    //private ActionStateManager actionManager = new ActionStateManager();
     private RoomManager2 roomManager;
+    private ActionStateManager actionStateManager = DependencyService.Get<ActionStateManager>();
 
 
     public MainPage()
@@ -38,10 +37,10 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
         InitializeComponent();
 
         //var dataStore = new CreatureDataStore();
-        //MyCreature = dataStore.ReadItem();
+        //MyCreature = dataStore.ReadItem();\
         var _creatureDataStore = DependencyService.Get<IDataStore<Creature>>();
         var Timer = new Timer();
-        roomManager = new RoomManager2(actionManager);
+        roomManager = new RoomManager2(actionStateManager);
 
 
         MyCreature = _creatureDataStore.ReadItem();
@@ -89,8 +88,17 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
 
     private void OnNextRoomClicked(object sender, EventArgs e)
     {
-        RoomButtonIsPressed?.Invoke(0);
-        Console.WriteLine(" clicked OnNextButton");
+
+        if (actionStateManager.CurrentState == ActionStateManager.PlayerAction.Working)
+        {
+            Console.WriteLine("Changed To CorridorP");
+            Navigation.PushAsync(new CorridorP());
+        }
+        else
+        {
+            Console.WriteLine("Changed To Corridor");
+            Navigation.PushAsync(new Corridor());
+        }
     }
     private void OnPreviousRoomClicked(object sender, EventArgs e)
     {

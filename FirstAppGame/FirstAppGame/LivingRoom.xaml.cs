@@ -8,6 +8,9 @@ public partial class LivingRoom : ContentPage
     public delegate void RoomSwitchButton(int _room);
     public static event RoomSwitchButton RoomButtonIsPressed;
 
+    private ActionStateManager actionStateManager = DependencyService.Get<ActionStateManager>();
+
+
 
     public LivingRoom()
 	{
@@ -16,15 +19,30 @@ public partial class LivingRoom : ContentPage
 
     private void OnNextRoomClicked(object sender, EventArgs e)
     {
-        RoomButtonIsPressed?.Invoke(0);
+        if (actionStateManager.CurrentState == ActionStateManager.PlayerAction.Gaming)
+        {
+            Navigation.PushAsync(new ChillRoomP());
+        }
+        else
+        {
+            Navigation.PushAsync(new ChillRoom());
+        }
     }
     private void OnPreviousRoomClicked(object sender, EventArgs e)
     {
-        RoomButtonIsPressed?.Invoke(2);
+        if (actionStateManager.CurrentState == ActionStateManager.PlayerAction.Working)
+        {
+            Console.WriteLine("Changed To CorridorP");
+            Navigation.PushAsync(new CorridorP());
+        }
+        else
+        {
+            Console.WriteLine("Changed To Corridor");
+            Navigation.PushAsync(new Corridor());
+        }
     }
-
-    private void Checkroom(int _room)
+    private void OnImageButtonClicked(object sender, EventArgs e)
     {
-
+        Navigation.PushAsync(new LivingRoomP());
     }
 }
