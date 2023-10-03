@@ -11,18 +11,10 @@ namespace FirstAppGame
     {
         StatsCalculators statsCalculators;
 
-        private Creature tijdelijkeCreature { get; set; } = new Creature()
-        {
-            Name = " Simon",
-            Hunger = 100.0f,
-            Thirst = 100.0f,
-            Bored = 100.0f,
-            Lonely = 100.0f,
-            OverStimulated = 100.0f,
-            Sleepy = 100.0f,
-            Money = 1000.0f
+        private Creature tijdelijkeCreature;
+        private IDataStore<Creature> creatureDataStore = DependencyService.Get<IDataStore<Creature>>();
 
-        };
+
         public ActionStateManager()
         {
             CurrentState = PlayerAction.Nothing;
@@ -44,6 +36,7 @@ namespace FirstAppGame
 
         public void UpdateStats()
         {
+            tijdelijkeCreature = creatureDataStore.ReadItem();
 
             switch (CurrentState)
             {
@@ -56,8 +49,11 @@ namespace FirstAppGame
 
             }
 
+            creatureDataStore.UpdateItem(tijdelijkeCreature);
+
             string _creatureStatsString = JsonConvert.SerializeObject(tijdelijkeCreature);
             Console.WriteLine(_creatureStatsString);
+
         }
 
         public PlayerAction CurrentPlayerAction()

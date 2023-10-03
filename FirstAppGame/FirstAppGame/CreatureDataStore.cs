@@ -22,17 +22,14 @@ namespace FirstAppGame
 
             string creatureString = JsonConvert.SerializeObject(item);
             Preferences.Set("MyCreature", creatureString);
-            Console.WriteLine("Create: MyCreature JsonConvert =  " + creatureString);
             return Preferences.ContainsKey("MyCreature");
 
         }
 
         public Creature ReadItem()
         {
-            string creatureString = Preferences.Get("MyCreature","");
+            string creatureString = Preferences.Get("MyCreature", "");
             Creature creature = JsonConvert.DeserializeObject<Creature>(creatureString);
-            Console.WriteLine("Read: MyCreature JsonConvert =  " + creatureString);
-            Console.WriteLine("Test Read Return: MyCreature JsonConvert =  " + creature.Name);
 
             return creature;
         }
@@ -41,14 +38,15 @@ namespace FirstAppGame
         {
             string creatureJsonText = JsonConvert.SerializeObject(item);
             Preferences.Set("MyCreature", creatureJsonText);
-            Console.WriteLine("Update: MyCreature JsonConvert =  " + creatureJsonText);
+
 
             return true;
 
         }
         public bool DeleteItem(Creature item)
         {
-            throw new NotImplementedException();
+            Preferences.Default.Remove("MyCreature");
+            return true;
         }
     }
 }

@@ -2006,6 +2006,13 @@ C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\De
 C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\resizetizer\r\drawable\livinroomtest2.png
 C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\resizetizer\r\drawable\livingroomportet.png
 C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\resizetizer\r\drawable\chillroomportret.png
+C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\resizetizer\r\drawable\bedroomp.png
+C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\resizetizer\r\drawable\chillroomp.png
+C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\resizetizer\r\drawable\corridor.png
+C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\resizetizer\r\drawable\corridorp.png
+C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\resizetizer\r\drawable\corridorstartmenu.png
+C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\resizetizer\r\drawable\livingroom.png
+C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\resizetizer\r\drawable\livingroomp.png
 C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\android\assets\mscorlib.dll
 C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\android\assets\System.Collections.Concurrent.dll
 C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\android\assets\System.Data.Common.dll
@@ -2019,10 +2026,3 @@ C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\De
 C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\android\assets\System.Runtime.Extensions.dll
 C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\android\assets\System.Runtime.Serialization.Formatters.dll
 C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\android\assets\System.Xml.dll
-C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\resizetizer\r\drawable\bedroomp.png
-C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\resizetizer\r\drawable\chillroomp.png
-C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\resizetizer\r\drawable\corridor.png
-C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\resizetizer\r\drawable\corridorp.png
-C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\resizetizer\r\drawable\corridorstartmenu.png
-C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\resizetizer\r\drawable\livingroom.png
-C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\resizetizer\r\drawable\livingroomp.png

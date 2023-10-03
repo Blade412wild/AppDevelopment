@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Timers;
 
 namespace FirstAppGame;
 
@@ -14,23 +15,24 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
     public static event RoomSwitchButton RoomButtonIsPressed;
     public Creature MyCreature { get; set; } = new Creature
     {
-    	Name = " Simon",
-    	Hunger = 100.0f,
-    	Thirst = 100.0f,
-    	Bored = 100.0f,
-    	Lonely = 100.0f,
-    	OverStimulated = 100.0f,
-    	Sleepy = 100.0f,
-    	Money = 0.0f
+        Name = " Simon",
+        Hunger = 100.0f,
+        Thirst = 100.0f,
+        Bored = 100.0f,
+        Lonely = 100.0f,
+        OverStimulated = 100.0f,
+        Sleepy = 100.0f,
+        Money = 0.0f
 
     };
 
-//private ActionStateManager actionManager = new ActionStateManager();
-private ActionStateManager actionStateManager = DependencyService.Get<ActionStateManager>();
+    private ActionStateManager actionStateManager = DependencyService.Get<ActionStateManager>();
 
 
     public MainPage()
     {
+        Timer();
+
         BindingContext = this;
 
         InitializeComponent();
@@ -38,7 +40,6 @@ private ActionStateManager actionStateManager = DependencyService.Get<ActionStat
         //var dataStore = new CreatureDataStore();
         //MyCreature = dataStore.ReadItem();\
         var _creatureDataStore = DependencyService.Get<IDataStore<Creature>>();
-        var Timer = new Timer();
         //roomManager = new RoomManager2(actionStateManager);
 
 
@@ -104,6 +105,23 @@ private ActionStateManager actionStateManager = DependencyService.Get<ActionStat
         RoomButtonIsPressed?.Invoke(3);
     }
 
+    private void Timer()
+    {
+        var timer = new System.Timers.Timer()
+        {
+            Interval = 1000,
+            AutoReset = true
+        };
+
+        timer.Elapsed += TimerElapsed;
+        timer.Start();
+    }
+
+    private void TimerElapsed(object sender, EventArgs e)
+    {
+        actionStateManager.UpdateStats();
+        Console.WriteLine("1 second yes :)");
+    }
 
 }
 

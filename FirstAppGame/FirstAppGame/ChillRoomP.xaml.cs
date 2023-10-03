@@ -5,7 +5,7 @@ public partial class ChillRoomP : ContentPage
     public delegate void PlayerActionButton();
     public static event PlayerActionButton OnGamingEvent;
 
-    public delegate void RoomSwitchButton(int _room);
+    public delegate void RoomSwitchButton();
     public static event RoomSwitchButton RoomButtonIsPressed;
 
     private ActionStateManager actionStateManager = DependencyService.Get<ActionStateManager>();
@@ -17,6 +17,8 @@ public partial class ChillRoomP : ContentPage
 
     private void OnNextRoomClicked(object sender, EventArgs e)
     {
+        RoomButtonIsPressed?.Invoke();
+
         if (actionStateManager.CurrentState == ActionStateManager.PlayerAction.Sleeping)
         {
             Navigation.PushAsync(new BedRoomP());
@@ -28,6 +30,8 @@ public partial class ChillRoomP : ContentPage
     }
     private void OnPreviousRoomClicked(object sender, EventArgs e)
     {
+        RoomButtonIsPressed?.Invoke();
+
         if (actionStateManager.CurrentState == ActionStateManager.PlayerAction.Eating)
         {
             Navigation.PushAsync(new LivingRoomP());

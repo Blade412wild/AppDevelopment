@@ -8,7 +8,7 @@ public partial class ChillRoom : ContentPage, INotifyPropertyChanged
     public delegate void PlayerActionButton();
     public static event PlayerActionButton OnGamingEvent;
 
-    public delegate void RoomSwitchButton(int _room);
+    public delegate void RoomSwitchButton();
     public static event RoomSwitchButton RoomButtonIsPressed;
 
     private ActionStateManager actionStateManager = DependencyService.Get<ActionStateManager>();
@@ -20,13 +20,13 @@ public partial class ChillRoom : ContentPage, INotifyPropertyChanged
     public ChillRoom()
     {
         InitializeComponent();
-        LocalCreature = creatureDataStore.ReadItem();
-        Console.WriteLine(LocalCreature.Name);
     }
 
 
     private void OnNextRoomClicked(object sender, EventArgs e)
     {
+        RoomButtonIsPressed?.Invoke();
+
         if (actionStateManager.CurrentState == ActionStateManager.PlayerAction.Sleeping)
         {
             Navigation.PushAsync(new BedRoomP());
@@ -38,6 +38,8 @@ public partial class ChillRoom : ContentPage, INotifyPropertyChanged
     }
     private void OnPreviousRoomClicked(object sender, EventArgs e)
     {
+        RoomButtonIsPressed?.Invoke();
+
         if (actionStateManager.CurrentState == ActionStateManager.PlayerAction.Eating)
         {
             Navigation.PushAsync(new LivingRoomP());
@@ -50,6 +52,8 @@ public partial class ChillRoom : ContentPage, INotifyPropertyChanged
     }
     private void OnImageButtonClicked(object sender, EventArgs e)
     {
+        RoomButtonIsPressed?.Invoke();
+
         OnGamingEvent?.Invoke();
         Navigation.PushAsync(new ChillRoomP());
     }

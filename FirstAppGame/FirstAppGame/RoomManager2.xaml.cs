@@ -85,15 +85,15 @@ public partial class RoomManager2 : ContentPage
 
     private void AddListenersToEvent()
     {
-        MainPage.RoomButtonIsPressed += RoomSaver;
-        Corridor.RoomButtonIsPressed += RoomSaver;
-        CorridorP.RoomButtonIsPressed += RoomSaver;
-        LivingRoom.RoomButtonIsPressed += RoomSaver;
-        LivingRoomP.RoomButtonIsPressed += RoomSaver;
-        ChillRoom.RoomButtonIsPressed += RoomSaver;
-        ChillRoomP.RoomButtonIsPressed += RoomSaver;
-        BedRoom.RoomButtonIsPressed += RoomSaver;
-        BedRoomP.RoomButtonIsPressed += RoomSaver;
+        //MainPage.RoomButtonIsPressed += RoomSaver;
+        //Corridor.RoomButtonIsPressed += RoomSaver;
+        //CorridorP.RoomButtonIsPressed += RoomSaver;
+        //LivingRoom.RoomButtonIsPressed += RoomSaver;
+        //LivingRoomP.RoomButtonIsPressed += RoomSaver;
+        //ChillRoom.RoomButtonIsPressed += RoomSaver;
+        //ChillRoomP.RoomButtonIsPressed += RoomSaver;
+        //BedRoom.RoomButtonIsPressed += RoomSaver;
+        //BedRoomP.RoomButtonIsPressed += RoomSaver;
 
     }
 }

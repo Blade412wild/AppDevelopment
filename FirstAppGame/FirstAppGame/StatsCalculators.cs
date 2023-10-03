@@ -119,7 +119,7 @@ namespace FirstAppGame
 
             if (_currentStatAmount < 100.0f)
             {
-                _baseAmount = -80.0f / 8 / 60 / 60; //je 20% over na een dag werken(8h)
+                _baseAmount = 80.0f / 8 / 60 / 60; //je 20% over na een dag werken(8h)
                 _newAmount = _baseAmount;
 
             }
