@@ -61,9 +61,7 @@ public partial class StartMenu : ContentPage
 
             creatureDataStore.CreateItem(MyCreature);
         }
-        creatureDataStore.UpdateItem(MyCreature);
 
-        MyCreature = creatureDataStore.ReadItem();
     }
     private void Timer()
     {
