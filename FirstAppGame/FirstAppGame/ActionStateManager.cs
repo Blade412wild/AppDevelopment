@@ -9,12 +9,15 @@ namespace FirstAppGame
 {
     public class ActionStateManager
     {
-        StatsCalculators statsCalculators;
+        //public static ActionStateManager actionStateManager;
+        public enum PlayerAction { Nothing, Working, Sleeping, Gaming, Eating};
+
+        public PlayerAction CurrentState;
 
         private Creature tijdelijkeCreature;
         private IDataStore<Creature> creatureDataStore = DependencyService.Get<IDataStore<Creature>>();
-
-
+        private IDataStore<OwnTime> pastTimeDataStore = DependencyService.Get<IDataStore<OwnTime>>();
+        private float timePast = 1.0f;
         public ActionStateManager()
         {
             CurrentState = PlayerAction.Nothing;
@@ -26,14 +29,12 @@ namespace FirstAppGame
             ChillRoom.OnGamingEvent += Gaming;
             BedRoom.OnSleepEvent += Sleeping;
             Corridor.OnWorkEvent += Working;
+            StartMenu.OnOpenGameEvent += StartAppStatsUpdate;
         }
 
+        private StatsCalculators statsCalculators;
 
-        //public static ActionStateManager actionStateManager;
-        public enum PlayerAction { Nothing, Working, Sleeping, Gaming, Eating/*, LogedOut, LogedIn */};
-
-        public PlayerAction CurrentState;
-
+        
         public void UpdateStats()
         {
             tijdelijkeCreature = creatureDataStore.ReadItem();
@@ -65,35 +66,39 @@ namespace FirstAppGame
         {
             CurrentState = PlayerAction.Nothing;
 
-            tijdelijkeCreature.Hunger =statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Hunger);
-            tijdelijkeCreature.Thirst = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Thirst);
-            tijdelijkeCreature.Sleepy = statsCalculators.DecreaseEnergy(tijdelijkeCreature.Sleepy);
-            tijdelijkeCreature.Money = statsCalculators.DecreaseMoney(CurrentState, tijdelijkeCreature.Money);
-            tijdelijkeCreature.Bored = statsCalculators.DecreaseBoredNess(tijdelijkeCreature.Bored);
-            tijdelijkeCreature.OverStimulated = statsCalculators.DecreaseOverstimulation(CurrentState, tijdelijkeCreature.OverStimulated);
+            tijdelijkeCreature.Hunger = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Hunger, timePast) ;
+            tijdelijkeCreature.Thirst = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Thirst, timePast);
+            tijdelijkeCreature.Sleepy = statsCalculators.DecreaseEnergy(tijdelijkeCreature.Sleepy, timePast);
+            tijdelijkeCreature.Money = statsCalculators.DecreaseMoney(CurrentState, tijdelijkeCreature.Money, timePast);
+            tijdelijkeCreature.Bored = statsCalculators.DecreaseBoredNess(tijdelijkeCreature.Bored, timePast);
+            tijdelijkeCreature.OverStimulated = statsCalculators.DecreaseOverstimulation(CurrentState, tijdelijkeCreature.OverStimulated, timePast);
+            tijdelijkeCreature.Lonely = statsCalculators.DecreaseLonely(tijdelijkeCreature.Lonely, timePast);
+
+
         }
 
         private void Working()
         {
             CurrentState = PlayerAction.Working;
 
-            tijdelijkeCreature.Hunger = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Hunger);
-            tijdelijkeCreature.Thirst = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Thirst);
-            tijdelijkeCreature.Sleepy = statsCalculators.DecreaseEnergy(tijdelijkeCreature.Sleepy);
-            tijdelijkeCreature.Money = statsCalculators.IncreaseMoney(tijdelijkeCreature.Money);
-            tijdelijkeCreature.Bored = statsCalculators.IncreaseBoredNess(tijdelijkeCreature.Bored);
-            tijdelijkeCreature.OverStimulated = statsCalculators.IncreaseOverstimulation(tijdelijkeCreature.OverStimulated);
+            tijdelijkeCreature.Hunger = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Hunger, timePast);
+            tijdelijkeCreature.Thirst = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Thirst, timePast);
+            tijdelijkeCreature.Sleepy = statsCalculators.DecreaseEnergy(tijdelijkeCreature.Sleepy, timePast);
+            tijdelijkeCreature.Money = statsCalculators.IncreaseMoney(tijdelijkeCreature.Money, timePast);
+            tijdelijkeCreature.Bored = statsCalculators.IncreaseBoredNess(tijdelijkeCreature.Bored, timePast);
+            tijdelijkeCreature.OverStimulated = statsCalculators.IncreaseOverstimulation(tijdelijkeCreature.OverStimulated, timePast);
         }
 
         private void Sleeping()
         {
             CurrentState = PlayerAction.Sleeping;
 
-            tijdelijkeCreature.Hunger = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Hunger);
-            tijdelijkeCreature.Thirst = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Thirst);
-            tijdelijkeCreature.Sleepy = statsCalculators.IncreaseEnergy(tijdelijkeCreature.Sleepy);
-            tijdelijkeCreature.Money = statsCalculators.DecreaseMoney(CurrentState, tijdelijkeCreature.Money);
-            tijdelijkeCreature.OverStimulated = statsCalculators.DecreaseOverstimulation(CurrentState, tijdelijkeCreature.OverStimulated);
+            tijdelijkeCreature.Hunger = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Hunger, timePast);
+            tijdelijkeCreature.Thirst = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Thirst, timePast);
+            tijdelijkeCreature.Sleepy = statsCalculators.IncreaseEnergy(tijdelijkeCreature.Sleepy, timePast);
+            tijdelijkeCreature.Money = statsCalculators.DecreaseMoney(CurrentState, tijdelijkeCreature.Money, timePast);
+            tijdelijkeCreature.OverStimulated = statsCalculators.DecreaseOverstimulation(CurrentState, tijdelijkeCreature.OverStimulated, timePast);
+            tijdelijkeCreature.Lonely = statsCalculators.DecreaseLonely(tijdelijkeCreature.Lonely, timePast);
 
 
         }
@@ -101,12 +106,13 @@ namespace FirstAppGame
         {
             CurrentState = PlayerAction.Gaming;
 
-            tijdelijkeCreature.Hunger = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Hunger);
-            tijdelijkeCreature.Thirst = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Thirst);
-            tijdelijkeCreature.Sleepy = statsCalculators.DecreaseEnergy(tijdelijkeCreature.Sleepy);
-            tijdelijkeCreature.Money = statsCalculators.DecreaseMoney(CurrentState, tijdelijkeCreature.Money);
-            tijdelijkeCreature.Bored = statsCalculators.DecreaseBoredNess(tijdelijkeCreature.Bored);
-            tijdelijkeCreature.OverStimulated = statsCalculators.DecreaseOverstimulation(CurrentState, tijdelijkeCreature.OverStimulated);
+            tijdelijkeCreature.Hunger = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Hunger, timePast);
+            tijdelijkeCreature.Thirst = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Thirst, timePast);
+            tijdelijkeCreature.Sleepy = statsCalculators.DecreaseEnergy(tijdelijkeCreature.Sleepy, timePast);
+            tijdelijkeCreature.Money = statsCalculators.DecreaseMoney(CurrentState, tijdelijkeCreature.Money, timePast);
+            tijdelijkeCreature.Bored = statsCalculators.DecreaseBoredNess(tijdelijkeCreature.Bored, timePast);
+            tijdelijkeCreature.OverStimulated = statsCalculators.DecreaseOverstimulation(CurrentState, tijdelijkeCreature.OverStimulated, timePast);
+            tijdelijkeCreature.Lonely = statsCalculators.DecreaseLonely(tijdelijkeCreature.Lonely, timePast);
 
 
         }
@@ -114,10 +120,27 @@ namespace FirstAppGame
         {
             CurrentState = PlayerAction.Eating;
 
-            tijdelijkeCreature.Hunger = statsCalculators.IncreaseHungerAndThirst(tijdelijkeCreature.Hunger);
-            tijdelijkeCreature.Thirst = statsCalculators.IncreaseHungerAndThirst(tijdelijkeCreature.Thirst);
-            tijdelijkeCreature.Sleepy = statsCalculators.DecreaseEnergy(tijdelijkeCreature.Sleepy);
-            tijdelijkeCreature.Money = statsCalculators.DecreaseMoney(CurrentState, tijdelijkeCreature.Money);
+            tijdelijkeCreature.Hunger = statsCalculators.IncreaseHungerAndThirst(tijdelijkeCreature.Hunger, timePast);
+            tijdelijkeCreature.Thirst = statsCalculators.IncreaseHungerAndThirst(tijdelijkeCreature.Thirst, timePast);
+            tijdelijkeCreature.Sleepy = statsCalculators.DecreaseEnergy(tijdelijkeCreature.Sleepy, timePast);
+            tijdelijkeCreature.Money = statsCalculators.DecreaseMoney(CurrentState, tijdelijkeCreature.Money, timePast);
+            tijdelijkeCreature.Lonely = statsCalculators.DecreaseLonely(tijdelijkeCreature.Lonely, timePast);
+
+
+        }
+
+        private void StartAppStatsUpdate(float _timePast)
+        {
+            tijdelijkeCreature = creatureDataStore.ReadItem();
+
+            tijdelijkeCreature.Hunger = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Hunger, _timePast);
+            tijdelijkeCreature.Thirst = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Thirst, _timePast);
+            tijdelijkeCreature.Sleepy = statsCalculators.DecreaseEnergy(tijdelijkeCreature.Sleepy, _timePast);
+            tijdelijkeCreature.Money = statsCalculators.DecreaseMoney(CurrentState, tijdelijkeCreature.Money, _timePast);
+            tijdelijkeCreature.Bored = statsCalculators.IncreaseBoredNess(tijdelijkeCreature.Bored, _timePast);
+            tijdelijkeCreature.Lonely = statsCalculators.IncreaseLonely(tijdelijkeCreature.Lonely, _timePast);
+
+            creatureDataStore.UpdateItem(tijdelijkeCreature);
 
         }
 

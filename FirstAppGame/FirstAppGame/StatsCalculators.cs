@@ -10,7 +10,7 @@ namespace FirstAppGame
     class StatsCalculators
     {
 
-        public float IncreaseHungerAndThirst(float _currentStatAmount)
+        public float IncreaseHungerAndThirst(float _currentStatAmount, float _timePast)
         {
             float _baseAmount;
             float _newAmount;
@@ -25,11 +25,11 @@ namespace FirstAppGame
                 _newAmount = 100.0f;
             }
 
-            _newAmount = _currentStatAmount + _baseAmount;
+            _newAmount = _currentStatAmount + (_baseAmount * _timePast);
 
             return _newAmount;
         }
-        public float DecreaseHungerAndThirst(float _currentStatAmount)
+        public float DecreaseHungerAndThirst(float _currentStatAmount, float _timePast)
         {
             float _baseAmount;
             float _newAmount; ;
@@ -45,11 +45,11 @@ namespace FirstAppGame
                 _newAmount = 0.0f;
             }
 
-            _newAmount = _currentStatAmount + _baseAmount;
+            _newAmount = _currentStatAmount + (_baseAmount * _timePast);
 
             return _newAmount;
         }
-        public float IncreaseEnergy(float _currentStatAmount)
+        public float IncreaseEnergy(float _currentStatAmount, float _timePast)
         {
             float _baseAmount;
             float _newAmount;
@@ -64,11 +64,11 @@ namespace FirstAppGame
                 _newAmount = 100.0f;
             }
 
-            _newAmount = _currentStatAmount + _baseAmount;
+            _newAmount = _currentStatAmount + (_baseAmount * _timePast);
 
             return _newAmount;
         }
-        public float DecreaseEnergy(float _currentStatAmount)
+        public float DecreaseEnergy(float _currentStatAmount, float _timePast)   
         {
             float _baseAmount;
             float _newAmount;
@@ -83,16 +83,16 @@ namespace FirstAppGame
                 _newAmount = 0.0f;
             }
 
-            _newAmount = _currentStatAmount + _baseAmount;
+            _newAmount = _currentStatAmount + (_baseAmount * _timePast);
 
             return _newAmount;
         }
-        public float IncreaseMoney(float _currentStatAmount)
+        public float IncreaseMoney(float _currentStatAmount, float _timePast)
         {
             float loanPerSeconds = 12.50f / 60.0f / 60.0f;// uurloon = 12,50 
-            return loanPerSeconds;
+            return loanPerSeconds * _timePast;
         }
-        public float DecreaseMoney(PlayerAction _playerAction, float _currentStatAmount)
+        public float DecreaseMoney(PlayerAction _playerAction, float _currentStatAmount, float _timePast)
         {
             float _eatingCost = 0;
             float _gamingCost = 0;
@@ -108,11 +108,11 @@ namespace FirstAppGame
                 _gamingCost = -1.0f / 60 / 60; // 1 euro per uur
             }
 
-            float _newAmount = _currentStatAmount + (_livingCost + _gamingCost + _eatingCost);
+            float _newAmount = _currentStatAmount + _timePast * (_livingCost + _gamingCost + _eatingCost);
 
             return _newAmount;
         }
-        public float IncreaseOverstimulation(float _currentStatAmount)
+        public float IncreaseOverstimulation(float _currentStatAmount, float _timePast)
         {
             float _baseAmount;
             float _newAmount; ;
@@ -129,11 +129,11 @@ namespace FirstAppGame
                 _newAmount = 100.0f;
             }
 
-            _newAmount = _currentStatAmount + _baseAmount;
+            _newAmount = _currentStatAmount + (_baseAmount * _timePast);
 
             return _newAmount;
         }
-        public float DecreaseOverstimulation(PlayerAction _playerState, float _currentStatAmount)
+        public float DecreaseOverstimulation(PlayerAction _playerState, float _currentStatAmount, float _timePast)
         {
             float _sleepEffect = 0;
             float _gamingEffect = 0;
@@ -159,11 +159,11 @@ namespace FirstAppGame
             }
 
 
-            _newAmount = _currentStatAmount + (_sleepEffect + _gamingEffect);
+            _newAmount = _currentStatAmount + _timePast * (_sleepEffect + _gamingEffect);
 
             return _newAmount;
         }
-        public float IncreaseBoredNess(float _currentStatAmount)
+        public float IncreaseBoredNess(float _currentStatAmount, float _timePast)
         {
             float _baseAmount;
             float _newAmount;
@@ -178,11 +178,11 @@ namespace FirstAppGame
                 _newAmount = 100.0f;
             }
 
-            _newAmount = _currentStatAmount + _baseAmount;
+            _newAmount = _currentStatAmount + (_baseAmount * _timePast);
 
             return _newAmount;
         }
-        public float DecreaseBoredNess(float _currentStatAmount)
+        public float DecreaseBoredNess(float _currentStatAmount, float _timePast)
         {
             float _baseAmount;
             float _newAmount;
@@ -197,11 +197,11 @@ namespace FirstAppGame
                 _newAmount = 0.0f;
             }
 
-            _newAmount = _currentStatAmount + _baseAmount;
+            _newAmount = _currentStatAmount + (_baseAmount * _timePast);
 
             return _newAmount;
         }
-        public float IncreaseLonely(float _currentStatAmount)
+        public float IncreaseLonely(float _currentStatAmount, float _timePast)
         {
             float _baseAmount;
             float _newAmount;
@@ -216,11 +216,11 @@ namespace FirstAppGame
                 _newAmount = 0.0f;
             }
 
-            _newAmount = _currentStatAmount + _baseAmount;
+            _newAmount = _currentStatAmount + (_baseAmount * _timePast);
 
             return _newAmount;
         }
-        public float DecreaseLonely(float _currentStatAmount)
+        public float DecreaseLonely(float _currentStatAmount, float _timePast)
         {
             float _baseAmount;
             float _newAmount;
@@ -235,7 +235,7 @@ namespace FirstAppGame
                 _newAmount = 0.0f;
             }
 
-            _newAmount = _currentStatAmount + _baseAmount;
+            _newAmount = _currentStatAmount + (_baseAmount * _timePast);
 
             return _newAmount;
         }

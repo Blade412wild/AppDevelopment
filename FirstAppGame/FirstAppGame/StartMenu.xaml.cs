@@ -1,41 +1,30 @@
-using Newtonsoft.Json;
-using System.Threading;
 
 namespace FirstAppGame;
 
 public partial class StartMenu : ContentPage
 {
+    public delegate void StartGameEvent(float _pastTime);
+    public static event StartGameEvent OnOpenGameEvent;
+
     private ActionStateManager actionStateManager = DependencyService.Get<ActionStateManager>();
     private IDataStore<Creature> creatureDataStore = DependencyService.Get<IDataStore<Creature>>();
+    private IDataStore<OwnTime> pastTimeDataStore = DependencyService.Get<IDataStore<OwnTime>>();
+
 
     private Creature MyCreature;
+    private OwnTime ownTime;
 
     public StartMenu()
     {
-        //Creature item = new Creature();
-        //item.Hunger = 76.0f;
-        //string creatureString = JsonConvert.SerializeObject(item);
-        //Preferences.Set("Test", creatureString);
-
-        //Console.WriteLine(Preferences.Get("Test", ""));
-        //string JsonDe = Preferences.Get("Test", "");
-
-
-        //MyCreature = JsonConvert.DeserializeObject<Creature>(JsonDe);
-        //Console.WriteLine(MyCreature.Hunger);
-
-
-
-
         InitializeComponent();
         CheckCreatureData();
+        OfflineTime();
         Timer();
     }
 
     private void OnImageButtonClicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new Corridor());
-
     }
 
     private void CheckCreatureData()
@@ -74,12 +63,52 @@ public partial class StartMenu : ContentPage
         timer.Elapsed += TimerElapsed;
         timer.Start();
 
-        
+    }
+
+    private void OfflineTime()
+    {
+
+        ownTime = pastTimeDataStore.ReadItem();
+
+        if (ownTime == null)
+        {
+            ownTime = new OwnTime
+            {
+                LastTime = DateTime.Now,
+            };
+
+            pastTimeDataStore.CreateItem(ownTime);
+        }
+
+        DateTime previousTime = ownTime.LastTime;
+        DateTime nowTime = DateTime.Now;
+
+        TimeSpan elapsedTime = nowTime - previousTime;
+
+        ownTime.LastTime = nowTime;
+        ownTime.ElapsedTimeSeconds = elapsedTime.Seconds;
+
+        OnOpenGameEvent?.Invoke(elapsedTime.Seconds);
+
+        pastTimeDataStore.UpdateItem(ownTime);
+        Console.WriteLine("LastTime = " + previousTime);
+        Console.WriteLine("now Time = " + nowTime);
+        Console.WriteLine("PastTime in seconds = " + elapsedTime.Seconds);
+
+        //return elapsedTime.Seconds;
+    }
+    private  void UpdateOfflineTime()
+    {
+        DateTime nowTime = DateTime.Now;
+        ownTime.LastTime = nowTime;
+        pastTimeDataStore.UpdateItem(ownTime);
+
     }
 
     private void TimerElapsed(object sender, EventArgs e)
     {
         actionStateManager.UpdateStats();
+        UpdateOfflineTime();
     }
 
 
