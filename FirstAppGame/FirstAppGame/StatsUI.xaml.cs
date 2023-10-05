@@ -4,12 +4,16 @@ public partial class StatsUI : ContentView
 {
     private IDataStore<Creature> creatureDataStore = DependencyService.Get<IDataStore<Creature>>();
     private IDataStore<OwnTime> pastTimeDataStore = DependencyService.Get<IDataStore<OwnTime>>();
+    private ActionStateManager actionStateManager = DependencyService.Get<ActionStateManager>();
+
 
     public delegate void PlayerActionButton();
     public static event PlayerActionButton OnDeadEvent;
 
 
     private Creature creature;
+    private OwnTime ownTime;
+
     public StatsUI()
     {
         Console.WriteLine("Ik STATSUI geactiveerd :) ");
@@ -42,16 +46,16 @@ public partial class StatsUI : ContentView
     private void CheckStats()
     {
 
-        if (creature.Hunger <= 0.0f && creature.Thirst <= 0.0f)
+        if (creature.Hunger <= 0.0f && creature.Thirst <= 0.0f && actionStateManager.CurrentState != ActionStateManager.PlayerAction.ending) 
         {
-            //OnDeadEvent.Invoke();
-            //Navigation.PushAsync(new EndingHunger());
+            OnDeadEvent.Invoke();
+            Navigation.PushAsync(new EndingHunger());
         }
 
-        if (creature.Money <= -200.0f)
+        if (creature.Money <= -200.0f && actionStateManager.CurrentState != ActionStateManager.PlayerAction.ending)
         {
-            //OnDeadEvent.Invoke();
-            //Navigation.PushAsync(new CorridorP());
+            OnDeadEvent.Invoke();
+            Navigation.PushAsync(new EndingDebt());
         }
     }
 

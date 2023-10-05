@@ -35,7 +35,7 @@ public partial class StartMenu : ContentPage
 
     private void CheckCreatureData()
     {
-        creatureDataStore.DeleteItem(MyCreature);
+        //creatureDataStore.DeleteItem(MyCreature);
         MyCreature = creatureDataStore.ReadItem();
 
         if (MyCreature == null)

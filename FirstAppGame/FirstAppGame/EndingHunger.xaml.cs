@@ -20,7 +20,8 @@ public partial class EndingHunger : ContentPage
         creatureDataStore.DeleteItem(creature);
         pastTimeDataStore.DeleteItem(ownTime);
 
-        Navigation.PushAsync(new StartMenu());
+        Application.Current.Quit();
 
     }
+
 }

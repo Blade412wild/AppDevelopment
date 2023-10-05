@@ -19,7 +19,6 @@ public partial class EndingDebt : ContentPage
         creatureDataStore.DeleteItem(creature);
         pastTimeDataStore.DeleteItem(ownTime);
 
-        Navigation.PushAsync(new StartMenu());
-
+        Application.Current.Quit();
     }
 }

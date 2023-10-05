@@ -23,7 +23,7 @@
         <HorizontalStackLayout Spacing="10"
                                HorizontalOptions="Center">
             <Button
-                Text="Restart"
+                Text="Quit"
                 HorizontalOptions="Center" 
                 Clicked="OnRestartClicked" />
 
