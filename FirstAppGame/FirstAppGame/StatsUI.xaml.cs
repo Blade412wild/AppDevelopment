@@ -3,7 +3,6 @@ namespace FirstAppGame;
 public partial class StatsUI : ContentView
 {
     private IDataStore<Creature> creatureDataStore = DependencyService.Get<IDataStore<Creature>>();
-    private IDataStore<OwnTime> pastTimeDataStore = DependencyService.Get<IDataStore<OwnTime>>();
     private ActionStateManager actionStateManager = DependencyService.Get<ActionStateManager>();
 
 
@@ -12,14 +11,13 @@ public partial class StatsUI : ContentView
 
 
     private Creature creature;
-    private OwnTime ownTime;
 
     public StatsUI()
     {
         Console.WriteLine("Ik STATSUI geactiveerd :) ");
         InitializeComponent();
         UpdateStatsUI();
-        //CheckStats();
+        //CheckStats(); als ik deze aan doe en de if statement is true, dan gaat de constructor zichzelf in een loop aanzetten?
 
     }
 
