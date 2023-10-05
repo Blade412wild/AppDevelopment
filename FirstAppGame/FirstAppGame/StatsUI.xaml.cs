@@ -12,10 +12,11 @@ public partial class StatsUI : ContentView
     private Creature creature;
     public StatsUI()
     {
-        //Console.WriteLine("Ik STATSUI geactiveerd :) ");
+        Console.WriteLine("Ik STATSUI geactiveerd :) ");
         InitializeComponent();
         UpdateStatsUI();
-        CheckStats();
+        //CheckStats();
+
     }
 
     private void UpdateStatsUI()
