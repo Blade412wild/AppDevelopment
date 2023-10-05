@@ -1,4 +1,6 @@
 
+using System.Reflection.Metadata.Ecma335;
+
 namespace FirstAppGame;
 
 public partial class StartMenu : ContentPage
@@ -33,19 +35,15 @@ public partial class StartMenu : ContentPage
 
     private void CheckCreatureData()
     {
-
         creatureDataStore.DeleteItem(MyCreature);
         MyCreature = creatureDataStore.ReadItem();
-        //MyCreature.Hunger = 0.1f;
-        //MyCreature.Thirst = 0.1f;
-
 
         if (MyCreature == null)
         {
             Console.WriteLine("MyCreature was null");
             MyCreature = new Creature
             {
-                Name = " Felice",
+                Name = RandomName(),
                 Hunger = 100.0f,
                 Thirst = 100.0f,
                 Bored = 0.0f,
@@ -58,12 +56,33 @@ public partial class StartMenu : ContentPage
 
             creatureDataStore.CreateItem(MyCreature);
         }
-        creatureDataStore.UpdateItem(MyCreature);
     }
 
     private string RandomName()
     {
-        return "d";
+        Random rnd = new Random();
+        string name = "";
+
+        for (int j = 0; j < 1; j++)
+        {
+            Console.WriteLine(rnd.Next(8));//returns random integers < 10
+        }
+
+        switch (rnd.Next(5))
+        {
+            case 0: name = "jan"; break;
+            case 1: name = "Felice"; break;
+            case 2: name = "Simon"; break;
+            case 3: name = "Nathan"; break;
+            case 4: name = "Ivar"; break;
+            case 5: name = "Aaron"; break;
+            case 6: name = "Valentijn"; break;
+            case 7: name = "Vincent"; break;
+
+        }
+        
+
+        return name;
     }
     private void Timer()
     {
