@@ -94,7 +94,7 @@ namespace FirstAppGame
             tijdelijkeCreature.Sleepy = statsCalculators.DecreaseEnergy(tijdelijkeCreature.Sleepy, timePast);
             tijdelijkeCreature.Money = statsCalculators.IncreaseMoney(tijdelijkeCreature.Money, timePast);
             tijdelijkeCreature.Bored = statsCalculators.IncreaseBoredNess(tijdelijkeCreature.Bored, timePast);
-            tijdelijkeCreature.OverStimulated = statsCalculators.IncreaseOverstimulation(tijdelijkeCreature.OverStimulated, timePast);
+            tijdelijkeCreature.OverStimulated = statsCalculators.IncreaseOverstimulation(tijdelijkeCreature.OverStimulated, timePast); 
         }
 
         private void Sleeping()

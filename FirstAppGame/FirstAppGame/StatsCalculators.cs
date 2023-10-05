@@ -96,7 +96,7 @@ namespace FirstAppGame
         public float DecreaseMoney(PlayerAction _playerAction, float _currentStatAmount, float _timePast)
         {
             float _eatingCost = 0;
-            float _gamingCost = 0;
+            float _gamingCost = 0; 
             float _livingCost = -50.0f / 24 / 60 / 60; // 50 euro per dag = 24 uur 
 
             if (_playerAction == PlayerAction.Eating)
