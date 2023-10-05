@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tamagotchi="clr-namespace:FirstAppGame"
+             x:Class="FirstAppGame.StatsUI">
+
+
+
+    <HorizontalStackLayout Spacing="30"
+                               HorizontalOptions="Center">
+        <VerticalStackLayout >
+            <Label 
+                    x:Name="PlayerName"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+            <Label 
+                    x:Name="PlayerMoney"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+            <Label 
+                    x:Name="PlayerAction"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label 
+                    x:Name="PlayerHunger"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+            <Label 
+                    x:Name="PlayerThirst"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+            <Label 
+                    x:Name="PlayerEnergy"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label 
+                    x:Name="PlayerOverStimulated"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+            <Label 
+                    x:Name="PlayerBored"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+            <Label 
+                    x:Name="PlayerLonely"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+
+    </HorizontalStackLayout>
+
+</ContentView>

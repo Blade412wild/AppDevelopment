@@ -9,6 +9,8 @@ obj\Debug\net7.0-android\resizetizer\r\drawable\corridorblanc.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\corridorp.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\corridorstartmenu.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\fullhouse.png
+obj\Debug\net7.0-android\resizetizer\r\drawable\gameoverdebt.png
+obj\Debug\net7.0-android\resizetizer\r\drawable\gameoverhunger.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\livingroom.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\livingroomp.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\livingroomportet.png

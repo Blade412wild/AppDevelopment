@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tamagotchi="clr-namespace:FirstAppGame"
              x:Class="FirstAppGame.StartMenu"
              Title="StartMenu">
+    
     <VerticalStackLayout Spacing="10">
 
 
@@ -14,46 +16,10 @@
             Text="StartMenu"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <VerticalStackLayout>
+        
+        <tamagotchi:StatsUI>
 
-            <HorizontalStackLayout Spacing="10"
-                                   HorizontalOptions="Center" >
-                <Label 
-                    Text="Hunger: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-                <Label 
-                    Text="Thirst: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-                <Label 
-                    Text="Sleep: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-
-
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout Spacing="10"
-                                   HorizontalOptions="Center" >
-                <Label 
-                    Text="Overstimulated: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-                <Label 
-                    Text="Bored: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-                <Label 
-                    Text="Lonely: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-            </HorizontalStackLayout>
-
-        </VerticalStackLayout>
-        <HorizontalStackLayout Spacing="10"
-                               HorizontalOptions="Center">
-
-        </HorizontalStackLayout>
+        </tamagotchi:StatsUI>
+        
     </VerticalStackLayout>
 </ContentPage>

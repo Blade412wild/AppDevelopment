@@ -90,7 +90,8 @@ namespace FirstAppGame
         public float IncreaseMoney(float _currentStatAmount, float _timePast)
         {
             float loanPerSeconds = 12.50f / 60.0f / 60.0f;// uurloon = 12,50 
-            return loanPerSeconds * _timePast;
+            float newAmount = _currentStatAmount + (_timePast * loanPerSeconds);
+            return newAmount;
         }
         public float DecreaseMoney(PlayerAction _playerAction, float _currentStatAmount, float _timePast)
         {

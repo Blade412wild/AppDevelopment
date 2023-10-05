@@ -2,8 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FirstAppGame.BedRoom"
+             xmlns:tamagotchi="clr-namespace:FirstAppGame"
              Title="BedRoom">
-    <VerticalStackLayout Spacing="10">
+    
+    <VerticalStackLayout Spacing="5">
 
         <ImageButton Source="bedroom.png"
                     Clicked="OnImageButtonClicked"
@@ -13,43 +15,11 @@
             Text="Bedroom"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <VerticalStackLayout>
 
-            <HorizontalStackLayout Spacing="10"
-                                   HorizontalOptions="Center" >
-                <Label 
-                    Text="Hunger: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-                <Label 
-                    Text="Thirst: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-                <Label 
-                    Text="Sleep: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
+        <tamagotchi:StatsUI>
 
+        </tamagotchi:StatsUI>
 
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout Spacing="10"
-                                   HorizontalOptions="Center" >
-                <Label 
-                    Text="Overstimulated: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-                <Label 
-                    Text="Bored: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-                <Label 
-                    Text="Lonely: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-            </HorizontalStackLayout>
-
-        </VerticalStackLayout>
         <HorizontalStackLayout Spacing="10"
                                HorizontalOptions="Center">
             <Button

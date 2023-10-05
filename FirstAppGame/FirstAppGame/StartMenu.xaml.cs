@@ -6,6 +6,10 @@ public partial class StartMenu : ContentPage
     public delegate void StartGameEvent(float _pastTime);
     public static event StartGameEvent OnOpenGameEvent;
 
+    public delegate void TimerDone();
+    public static event TimerDone timerisDone;
+
+
     private ActionStateManager actionStateManager = DependencyService.Get<ActionStateManager>();
     private IDataStore<Creature> creatureDataStore = DependencyService.Get<IDataStore<Creature>>();
     private IDataStore<OwnTime> pastTimeDataStore = DependencyService.Get<IDataStore<OwnTime>>();
@@ -29,8 +33,11 @@ public partial class StartMenu : ContentPage
 
     private void CheckCreatureData()
     {
-        //creatureDataStore.DeleteItem(MyCreature);
+
+        creatureDataStore.DeleteItem(MyCreature);
         MyCreature = creatureDataStore.ReadItem();
+        //MyCreature.Hunger = 0.1f;
+        //MyCreature.Thirst = 0.1f;
 
 
         if (MyCreature == null)
@@ -38,19 +45,25 @@ public partial class StartMenu : ContentPage
             Console.WriteLine("MyCreature was null");
             MyCreature = new Creature
             {
-                Name = " Ezra",
+                Name = " Felice",
                 Hunger = 100.0f,
                 Thirst = 100.0f,
-                Bored = 100.0f,
-                Lonely = 100.0f,
-                OverStimulated = 100.0f,
+                Bored = 0.0f,
+                Lonely = 0.0f,
+                OverStimulated = 0.0f,
                 Sleepy = 100.0f,
-                Money = 800.0f
+                Money = 800.0f,
+                PlayerAction = ActionStateManager.PlayerAction.Nothing
             };
 
             creatureDataStore.CreateItem(MyCreature);
         }
+        creatureDataStore.UpdateItem(MyCreature);
+    }
 
+    private string RandomName()
+    {
+        return "d";
     }
     private void Timer()
     {
@@ -109,7 +122,9 @@ public partial class StartMenu : ContentPage
     {
         actionStateManager.UpdateStats();
         UpdateOfflineTime();
+        timerisDone?.Invoke();
     }
+
 
 
 

@@ -40,7 +40,8 @@ namespace FirstAppGame
         }
         public bool DeleteItem(OwnTime item)
         {
-            throw new NotImplementedException();
+            Preferences.Default.Remove("MyCreature");
+            return true;
         }
     }
 }

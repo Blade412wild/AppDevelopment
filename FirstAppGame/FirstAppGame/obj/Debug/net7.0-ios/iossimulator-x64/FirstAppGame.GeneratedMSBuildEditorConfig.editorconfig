@@ -58,6 +58,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = FirstAppGame.CorridorP.xam
 build_metadata.AdditionalFiles.TargetPath = CorridorP.xaml
 build_metadata.AdditionalFiles.RelativePath = CorridorP.xaml
 
+[C:/Users/Nathan/Documents/GitHub/AppDevelopment/FirstAppGame/FirstAppGame/EndingHunger.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FirstAppGame.EndingHunger.xaml
+build_metadata.AdditionalFiles.TargetPath = EndingHunger.xaml
+build_metadata.AdditionalFiles.RelativePath = EndingHunger.xaml
+
 [C:/Users/Nathan/Documents/GitHub/AppDevelopment/FirstAppGame/FirstAppGame/LivingRoom.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FirstAppGame.LivingRoom.xaml
@@ -105,3 +111,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FirstAppGame.StartMenu.xaml
 build_metadata.AdditionalFiles.TargetPath = StartMenu.xaml
 build_metadata.AdditionalFiles.RelativePath = StartMenu.xaml
+
+[C:/Users/Nathan/Documents/GitHub/AppDevelopment/FirstAppGame/FirstAppGame/StatsUI.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FirstAppGame.StatsUI.xaml
+build_metadata.AdditionalFiles.TargetPath = StatsUI.xaml
+build_metadata.AdditionalFiles.RelativePath = StatsUI.xaml

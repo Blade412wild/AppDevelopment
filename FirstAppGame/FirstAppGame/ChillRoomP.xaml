@@ -2,8 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FirstAppGame.ChillRoomP"
+             xmlns:tamagotchi="clr-namespace:FirstAppGame"
              Title="ChillRoomP">
-    <VerticalStackLayout Spacing="10">
+    <VerticalStackLayout Spacing="5">
         <Image
                 Source="chillRoomp.png"
                 HeightRequest="600"
@@ -12,43 +13,10 @@
             Text="ChillRoom"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <VerticalStackLayout>
 
-            <HorizontalStackLayout Spacing="10"
-                                   HorizontalOptions="Center" >
-                <Label 
-                    Text="Hunger: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-                <Label 
-                    Text="Thirst: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-                <Label 
-                    Text="Sleep: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
+        <tamagotchi:StatsUI>
 
-
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout Spacing="10"
-                                   HorizontalOptions="Center" >
-                <Label 
-                    Text="Overstimulated: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-                <Label 
-                    Text="Bored: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-                <Label 
-                    Text="Lonely: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-            </HorizontalStackLayout>
-
-        </VerticalStackLayout>
+        </tamagotchi:StatsUI>
 
 
         <HorizontalStackLayout Spacing="10"

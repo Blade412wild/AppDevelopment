@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirstAppGame.EndingHunger"
+             xmlns:tamagotchi="clr-namespace:FirstAppGame"
+             Title="EndingHunger">
+    
+    <VerticalStackLayout Spacing="5">
+        <Image
+                Source="gameoverhunger.png"
+                HeightRequest="600"
+                HorizontalOptions="Center" />
+        <Label 
+            Text="Dead"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <tamagotchi:StatsUI>
+
+        </tamagotchi:StatsUI>
+
+
+        <HorizontalStackLayout Spacing="10"
+                               HorizontalOptions="Center">
+            <Button
+                Text="Restart"
+                HorizontalOptions="Center" 
+                Clicked="OnRestartClicked" />
+
+        </HorizontalStackLayout>
+
+
+    </VerticalStackLayout>
+</ContentPage>

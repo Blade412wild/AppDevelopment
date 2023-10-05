@@ -2026,3 +2026,5 @@ C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\De
 C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\android\assets\System.Runtime.Extensions.dll
 C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\android\assets\System.Runtime.Serialization.Formatters.dll
 C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\android\assets\System.Xml.dll
+C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\resizetizer\r\drawable\gameoverdebt.png
+C:\Users\Nathan\Documents\GitHub\AppDevelopment\FirstAppGame\FirstAppGame\obj\Debug\net7.0-android\resizetizer\r\drawable\gameoverhunger.png

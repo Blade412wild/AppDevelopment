@@ -2,8 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FirstAppGame.Corridor"
+             xmlns:tamagotchi="clr-namespace:FirstAppGame"
              Title="Corridor">
-    <VerticalStackLayout Spacing="10">
+    <VerticalStackLayout Spacing="5">
         <ImageButton Source="corridor.png"
                     Clicked="OnImageButtonClicked"
                     HeightRequest="600"
@@ -13,43 +14,10 @@
             Text="Corridor"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <VerticalStackLayout>
 
-            <HorizontalStackLayout Spacing="10"
-                                   HorizontalOptions="Center" >
-                <Label 
-                    Text="Hunger: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-                <Label 
-                    Text="Thirst: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-                <Label 
-                    Text="Sleep: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
+        <tamagotchi:StatsUI>
 
-
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout Spacing="10"
-                                   HorizontalOptions="Center" >
-                <Label 
-                    Text="Overstimulated: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-                <Label 
-                    Text="Bored: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-                <Label 
-                    Text="Lonely: 100%"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-            </HorizontalStackLayout>
-
-        </VerticalStackLayout>
+        </tamagotchi:StatsUI>
 
 
         <HorizontalStackLayout Spacing="10"

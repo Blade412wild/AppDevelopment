@@ -10,7 +10,7 @@ namespace FirstAppGame
     public class ActionStateManager
     {
         //public static ActionStateManager actionStateManager;
-        public enum PlayerAction { Nothing, Working, Sleeping, Gaming, Eating};
+        public enum PlayerAction { Nothing, Working, Sleeping, Gaming, Eating, ending};
 
         public PlayerAction CurrentState;
 
@@ -20,7 +20,8 @@ namespace FirstAppGame
         private float timePast = 1.0f;
         public ActionStateManager()
         {
-            CurrentState = PlayerAction.Nothing;
+            tijdelijkeCreature = creatureDataStore.ReadItem();
+            //CurrentState = tijdelijkeCreature.PlayerAction;
             statsCalculators = new StatsCalculators();
 
             //Events Listenactions
@@ -30,6 +31,8 @@ namespace FirstAppGame
             BedRoom.OnSleepEvent += Sleeping;
             Corridor.OnWorkEvent += Working;
             StartMenu.OnOpenGameEvent += StartAppStatsUpdate;
+
+            StatsUI.OnDeadEvent += ending;
         }
 
         private StatsCalculators statsCalculators;
@@ -38,6 +41,7 @@ namespace FirstAppGame
         public void UpdateStats()
         {
             tijdelijkeCreature = creatureDataStore.ReadItem();
+            CurrentState = tijdelijkeCreature.PlayerAction;
 
             switch (CurrentState)
             {
@@ -47,6 +51,7 @@ namespace FirstAppGame
                 case PlayerAction.Sleeping: Sleeping(); break;
                 case PlayerAction.Gaming: Gaming(); break;
                 case PlayerAction.Eating: Eating(); break;
+                case PlayerAction.ending: ending(); break;
 
             }
 
@@ -64,7 +69,8 @@ namespace FirstAppGame
 
         private void Nothing()
         {
-            CurrentState = PlayerAction.Nothing;
+            tijdelijkeCreature.PlayerAction = PlayerAction.Nothing;
+            creatureDataStore.UpdateItem(tijdelijkeCreature);
 
             tijdelijkeCreature.Hunger = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Hunger, timePast) ;
             tijdelijkeCreature.Thirst = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Thirst, timePast);
@@ -79,7 +85,9 @@ namespace FirstAppGame
 
         private void Working()
         {
-            CurrentState = PlayerAction.Working;
+            tijdelijkeCreature.PlayerAction = PlayerAction.Working;
+            creatureDataStore.UpdateItem(tijdelijkeCreature);
+
 
             tijdelijkeCreature.Hunger = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Hunger, timePast);
             tijdelijkeCreature.Thirst = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Thirst, timePast);
@@ -91,7 +99,8 @@ namespace FirstAppGame
 
         private void Sleeping()
         {
-            CurrentState = PlayerAction.Sleeping;
+            tijdelijkeCreature.PlayerAction = PlayerAction.Sleeping;
+            creatureDataStore.UpdateItem(tijdelijkeCreature);
 
             tijdelijkeCreature.Hunger = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Hunger, timePast);
             tijdelijkeCreature.Thirst = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Thirst, timePast);
@@ -104,7 +113,8 @@ namespace FirstAppGame
         }
         private void Gaming()
         {
-            CurrentState = PlayerAction.Gaming;
+            tijdelijkeCreature.PlayerAction = PlayerAction.Gaming;
+            creatureDataStore.UpdateItem(tijdelijkeCreature);
 
             tijdelijkeCreature.Hunger = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Hunger, timePast);
             tijdelijkeCreature.Thirst = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Thirst, timePast);
@@ -118,7 +128,8 @@ namespace FirstAppGame
         }
         private void Eating()
         {
-            CurrentState = PlayerAction.Eating;
+            tijdelijkeCreature.PlayerAction = PlayerAction.Eating;
+            creatureDataStore.UpdateItem(tijdelijkeCreature);
 
             tijdelijkeCreature.Hunger = statsCalculators.IncreaseHungerAndThirst(tijdelijkeCreature.Hunger, timePast);
             tijdelijkeCreature.Thirst = statsCalculators.IncreaseHungerAndThirst(tijdelijkeCreature.Thirst, timePast);
@@ -129,9 +140,17 @@ namespace FirstAppGame
 
         }
 
+        private void ending()
+        {
+            tijdelijkeCreature.PlayerAction = PlayerAction.ending;
+            creatureDataStore.UpdateItem(tijdelijkeCreature);
+
+        }
+
         private void StartAppStatsUpdate(float _timePast)
         {
             tijdelijkeCreature = creatureDataStore.ReadItem();
+            creatureDataStore.UpdateItem(tijdelijkeCreature);
 
             tijdelijkeCreature.Hunger = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Hunger, _timePast);
             tijdelijkeCreature.Thirst = statsCalculators.DecreaseHungerAndThirst(tijdelijkeCreature.Thirst, _timePast);
@@ -141,7 +160,6 @@ namespace FirstAppGame
             tijdelijkeCreature.Lonely = statsCalculators.IncreaseLonely(tijdelijkeCreature.Lonely, _timePast);
 
             creatureDataStore.UpdateItem(tijdelijkeCreature);
-
         }
 
     }

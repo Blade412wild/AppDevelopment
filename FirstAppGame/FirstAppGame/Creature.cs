@@ -18,6 +18,7 @@ namespace FirstAppGame
         public float Lonely { get; set; }
         public float OverStimulated { get; set; }
         public float Money { get; set; }
+        public ActionStateManager.PlayerAction PlayerAction { get; set; }
 
     }
 
